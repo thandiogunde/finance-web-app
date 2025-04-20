@@ -1,0 +1,214 @@
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.login-form {
+  flex: 1;
+  padding: 3rem;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.login-logo {
+  height: 70px;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: #0b4c5f;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: goldenrod;
+  transition: color 0.3s ease;
+}
+
+.login-form h1 {
+  font-size: 2rem;
+  color: #0b4c5f;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.login-form label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #0b4c5f;
+  box-shadow: 0 0 5px rgba(11, 76, 95, 0.3);
+}
+
+.forgot-password {
+  margin-top: 0.5rem;
+  text-align: right;
+  color: goldenrod;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #c69214;
+  text-decoration: underline;
+}
+
+.btn-main {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #0b4c5f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-main:hover {
+  background-color: #083a49;
+}
+
+.btn-google {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #247995;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-google:hover {
+  background-color: #1d6277;
+}
+
+.switch-form {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #555;
+}
+
+.switch-form a {
+  color: goldenrod;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.switch-form a:hover {
+  color: #c69214;
+  text-decoration: underline;
+}
+
+.login-illustration {
+  flex: 1;
+  background-color: #b1dfe6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.login-illustration img {
+  width: 100%;
+  max-width: 575px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .login-container {
+    flex-direction: column-reverse;
+  }
+  
+  .login-form {
+    max-width: 100%;
+    padding: 2rem;
+  }
+  
+  .login-illustration {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-form {
+    padding: 1.5rem;
+  }
+  
+  .login-logo {
+    height: 50px;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+  
+  .close-btn {
+    top: 1rem;
+    right: 1.5rem;
+  }
+  
+  .login-form h1 {
+    font-size: 1.8rem;
+  }
+  
+  .login-illustration {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form {
+    padding: 1rem;
+  }
+  
+  .login-form h1 {
+    font-size: 1.5rem;
+  }
+  
+  .login-logo {
+    height: 45px;
+  }
+  
+  .btn-main, .btn-google {
+    padding: 0.7rem;
+  }
+  
+  .login-illustration {
+    height: 200px;
+  }
+}

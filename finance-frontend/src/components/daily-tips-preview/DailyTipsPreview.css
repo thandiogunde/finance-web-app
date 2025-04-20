@@ -1,0 +1,72 @@
+.daily-tips-preview {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #0b4c5f;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.daily-tips-preview h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #b1dfe6;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 280px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-image {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.card img {
+  max-height: 90px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.learn-btn {
+  padding: 0.8rem 2rem;
+  background-color: #0b4c5f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.learn-btn:hover {
+  background-color: goldenrod;
+}

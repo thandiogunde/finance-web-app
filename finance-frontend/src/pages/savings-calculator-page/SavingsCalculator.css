@@ -1,0 +1,118 @@
+.breadcrumb {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .breadcrumb span {
+    margin: 0 0.3rem;
+  }
+  
+  .breadcrumb .active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #19687e;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .savings-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .savings-left,
+  .savings-right {
+    flex: 1;
+    min-width: 320px;
+    margin: 1rem;
+  }
+  
+  .savings-left h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #19687e;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .savings-left h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #19687e;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .savings-left label {
+    display: block;
+    margin-top: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .savings-left input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    border: 2px solid #000;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .btn-calc {
+    background-color: #52a8b3;
+    border: none;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .savings-right {
+    width: 100%;
+  }
+  
+  .result-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .result-top-row h3 {
+    font-size: 1.4rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #19687e;
+  }
+  
+  .savings-image {
+    width: 200px;
+    max-width: 100%;
+  }
+  
+  .result-box {
+    border: 2px solid #000;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    min-height: 100px;
+    width: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  .btn-recalc {
+    background-color: #52a8b3;
+    border: none;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+
+  

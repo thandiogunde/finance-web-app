@@ -1,0 +1,215 @@
+.learning-page {
+  padding: 2rem;
+  background-color: #e6f5f8;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  box-shadow: #073c4b 0px 0px 10px;
+}
+
+.learning-page h1 {
+  font-size: 2.5rem;
+  color: #073c4b;
+}
+
+.intro {
+  margin-top: 1rem;
+  color: #073c4b;
+  font-size: 1rem;
+}
+
+.learning-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default to 3 items per row */
+  gap: 2rem;
+  padding: 3rem; /* For adequate spacing around the grid */
+}
+
+.learning-card {
+  background-color: #b1dfe6;
+  padding: 1.5rem;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.learning-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.learning-card img {
+  width: 70px;
+  margin-bottom: 1rem;
+}
+
+.learning-card h2 {
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+  color: #0b4c5f;
+  text-align: center;
+}
+
+.learning-card p {
+  font-size: 0.9rem;
+  color: #0b4c5f;
+}
+
+.learning-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: underline;
+  color: #0b4c5f;
+  font-weight: bold;
+}
+
+.learning-card a:hover {
+  color: goldenrod;
+}
+
+.load-all {
+  margin-top: 2rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  background-color: #0b4c5f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.load-all:hover {
+  background-color: goldenrod;
+}
+
+.learning-banner {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  padding-top: 1rem;
+  flex-direction: column;
+  text-align: center;
+  background-color: transparent;
+}
+
+.learning-banner h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #0b4c5f;
+  margin-bottom: 1rem;
+}
+
+.learning-banner p {
+  font-size: 1rem;
+  color: #073c4b;
+  max-width: 700px;
+}
+
+.learning-banner img {
+  width: 300px;
+  max-width: 45%;
+  margin-top: 1rem;
+}
+
+.load-btn-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.load-btn {
+  background-color: #0b4c5f;
+  color: white;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.load-btn:hover {
+  background-color: goldenrod;
+}
+
+/* Responsive Styles */
+
+/* For small screens like phones */
+@media (max-width: 768px) {
+  .learning-banner {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .learning-banner img {
+      width: 80%;
+      max-width: none;
+  }
+
+  .learning-card {
+      padding: 1.2rem;
+      font-size: 0.9rem;
+  }
+
+  .learning-card img {
+      width: 60px;
+  }
+
+  .learning-card h2 {
+      font-size: 1.2rem;
+  }
+
+  .learning-card p {
+      font-size: 0.8rem;
+  }
+
+  .learning-grid {
+      grid-template-columns: 1fr; /* Stack all items vertically on mobile */
+      gap: 1rem;
+      padding: 2rem; /* Add some space around */
+  }
+
+  .load-btn {
+      padding: 0.6rem 1.2rem;
+  }
+}
+
+/* For smaller mobile screens */
+@media (max-width: 480px) {
+  .learning-banner h1 {
+      font-size: 1.8rem;
+  }
+
+  .learning-banner p {
+      font-size: 0.9rem;
+  }
+
+  .learning-card {
+      padding: 1rem;
+  }
+
+  .learning-card img {
+      width: 50px;
+  }
+
+  .learning-card h2 {
+      font-size: 1.1rem;
+  }
+
+  .learning-card p {
+      font-size: 0.75rem;
+  }
+
+  .learning-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+  }
+
+  .load-btn {
+      padding: 0.5rem 1rem;
+  }
+}

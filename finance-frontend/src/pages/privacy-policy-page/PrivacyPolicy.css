@@ -1,0 +1,52 @@
+.privacy-banner {
+    background-color: #b1dfe6;
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #003b49;
+    box-shadow: #073c4b 0px 0px 10px;
+  }
+  
+  .privacy-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #0b4c5f;
+  }
+  
+  .privacy-banner p {
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #0b4c5f;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .privacy-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    line-height: 1.6;
+    color: #0b4c5f;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .privacy-content h2 {
+    margin-top: 2rem;
+    color: #0b4c5f;
+    font-size: 1.2rem;
+  }
+  .privacy-content p {
+    color: #0b4c5f;
+    text-align: justify;
+  }
+  
+  .privacy-content a {
+    color: goldenrod;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+    .privacy-content a:hover {
+        text-decoration: underline;
+    }
+  

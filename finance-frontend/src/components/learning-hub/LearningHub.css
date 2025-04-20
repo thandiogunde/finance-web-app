@@ -1,0 +1,286 @@
+:root {
+  --primary-color: #0b4c5f;
+  --accent-color: goldenrod;
+  --light-blue: #b1dfe6;
+  --white: #ffffff;
+  --gray: #f5f5f5;
+  --font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.learning-hub {
+  padding: 5rem 2rem;
+  background-color: var(--gray);
+  color: var(--primary-color);
+  font-family: var(--font-family);
+}
+
+.learning-hub-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.learning-hub-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.learning-hub h2 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.learning-hub h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: var(--accent-color);
+}
+
+.learning-hub-subtitle {
+  font-size: 1.3rem;
+  color: #555;
+  margin-top: 1.5rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+  padding: 1rem; /* p-4 equivalent */
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 12px;
+  flex: 1;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(11, 76, 95, 0.1);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px; /* Desktop size */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(11, 76, 95, 0.15);
+}
+
+.card-image {
+  background-color: var(--light-blue);
+  padding: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+}
+
+.card img {
+  height: 100px;
+  width: auto;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--accent-color);
+}
+
+.card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+  color: #555;
+  flex-grow: 1;
+}
+
+.read-more-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.read-more-link::after {
+  content: '→';
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.read-more-link:hover::after {
+  transform: translateX(4px);
+}
+
+.learning-hub-footer {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.learn-btn-link {
+  text-decoration: none;
+}
+
+.learn-btn {
+  padding: 1.2rem 3rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(11, 76, 95, 0.2);
+}
+
+.learn-btn:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(184, 134, 11, 0.3);
+}
+
+.learn-btn:active {
+  transform: translateY(-2px);
+}
+
+/* TABLETS */
+@media (max-width: 1024px) {
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem; /* p-4 equivalent for tablets */
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 300px; /* Slightly smaller on tablets */
+  }
+}
+
+/* PHONES */
+@media (max-width: 768px) {
+  .learning-hub {
+    padding: 3rem 1.2rem;
+  }
+
+  .learning-hub h2 {
+    font-size: 2.2rem;
+  }
+
+  .learning-hub-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .cards {
+    flex-direction: column !important;
+    padding: 1rem; /* p-4 equivalent for phones */
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+
+  .card-image {
+    height: 160px;
+    padding: 2rem;
+  }
+
+  .card h3 {
+    font-size: 1.4rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+
+  .learn-btn {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+  .learning-hub {
+    padding: 2rem 1rem;
+  }
+
+  .learning-hub h2 {
+    font-size: 1.8rem;
+  }
+
+  .learning-hub-subtitle {
+    font-size: 1rem;
+  }
+
+  .card-image {
+    height: 140px;
+    padding: 1.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+  }
+
+  .read-more-link {
+    font-size: 0.95rem;
+  }
+
+  .learn-btn {
+    font-size: 0.95rem;
+    padding: 0.9rem 1.6rem;
+  }
+}

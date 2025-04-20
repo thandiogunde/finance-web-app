@@ -1,0 +1,160 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+.contact-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Trebuchet MS', sans-serif;
+    flex: 1;
+  }
+
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 1;
+  }
+  
+  .contact-form-section {
+    width: 50%;
+    padding: 2rem;
+    background-color: #fff;
+    position: relative;
+    flex: auto;
+  }
+  
+  .contact-form-section h1 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #0b4c5f;
+    text-align: center;
+  }
+  
+  .contact-logo {
+    height: 70px;
+    margin-bottom: 1rem;
+  }
+  
+  form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.3rem;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+  
+  form textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .btn-submit {
+    margin-top: 1.5rem;
+    background-color: #0b4c5f;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .btn-submit:hover {
+    background-color: goldenrod;
+  }
+  
+  .contact-illustration {
+    width: 50%;
+    background-color: #b1dfe6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact-illustration img {
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+  }
+
+  .spinner {
+    margin: 1rem auto;
+    width: 30px;
+    height: 30px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #0b4c5f;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .success-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .popup-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup-card .check-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem auto;
+    display: block;
+  }
+  
+  .popup-card button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #0b4c5f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .popup-card button:hover {
+    background: goldenrod;
+  }
+  
+  
+  
+  

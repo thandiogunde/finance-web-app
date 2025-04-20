@@ -1,0 +1,111 @@
+.breadcrumb {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .breadcrumb span {
+    margin: 0 0.3rem;
+  }
+  
+  .breadcrumb .active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .manage-hero {
+    background-color: #a4d2dc;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: #073c4b 0px 0px 15px;
+  }
+  
+  .manage-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #073c4b;
+  }
+  
+  .manage-hero p {
+    max-width: 400px;
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #073c4b;
+  }
+  
+  .manage-hero img {
+    width: 300px;
+    max-width: 45%;
+  }
+  
+  .calculators {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .calculator-card {
+    background-color: #c0e7f1;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 300px;
+    text-align: center;
+    box-shadow: #073c4b 0px 0px 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .calculator-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #073c4b;
+  }
+  
+  .calculator-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #073c4b;
+  }
+  
+  .start-btn {
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #e0b533;
+    font-size: 1rem;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  }
+
+  .calculators p{
+    font-size: 0.9rem;
+    margin-top: 0rem;
+    color: #073c4b;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  .calculators a {
+    text-decoration: none;
+    color: goldenrod;
+    font-weight: bold;
+  }
+  .calculators a:hover {
+    text-decoration: underline;
+  }
+  
+  .calculator-card:hover {
+    transform: translateY(-10px);
+    box-shadow: #073c4b 0px 0px 25px;
+  }
+
+
+
+
+  

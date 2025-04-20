@@ -1,0 +1,75 @@
+.faq-banner {
+    background-color: #b1dfe6;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .faq-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #0b4c5f;
+  }
+  
+  .faq-banner p {
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #0b4c5f;
+    
+  }
+  
+  .faq-list {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+    cursor: pointer;
+  }
+  
+  .faq-question {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #003b49;
+    font-size: 1.1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  }
+  
+  .faq-answer {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #444;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .toggle-icon {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+  }
+  
+  .faq-contact-link {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f8f8;
+    font-size: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .faq-contact-link a {
+    color: goldenrod;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .faq-contact-link a:hover {
+    text-decoration: underline;
+  }
+  

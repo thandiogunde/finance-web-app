@@ -1,0 +1,252 @@
+.register-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.register-form {
+  flex: 1;
+  padding: 3rem;
+  background-color: white;
+  position: relative;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.register-logo {
+  height: 70px;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: #0b4c5f;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: goldenrod;
+  transition: color 0.3s ease;
+}
+
+.register-form h1 {
+  font-size: 2rem;
+  color: #0b4c5f;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.register-form label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: #0b4c5f;
+  box-shadow: 0 0 5px rgba(11, 76, 95, 0.3);
+}
+
+.btn-main {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #0b4c5f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-main:hover {
+  background-color: #083a49;
+}
+
+.btn-google {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #18688c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-google:hover {
+  background-color: #125271;
+}
+
+.existing {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #555;
+}
+
+.existing a {
+  color: goldenrod;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.existing a:hover {
+  color: #c69214;
+  text-decoration: underline;
+}
+
+.register-illustration {
+  flex: 1;
+  background-color: #b1dfe6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.register-illustration img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  object-fit: contain;
+}
+
+.strength-bar {
+  height: 8px;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-bar.weak {
+  background-color: red;
+  width: 33%;
+}
+
+.strength-bar.medium {
+  background-color: orange;
+  width: 66%;
+}
+
+.strength-bar.strong {
+  background-color: green;
+  width: 100%;
+}
+
+.password-rules {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.password-rules li {
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.valid {
+  color: green;
+  font-weight: 500;
+}
+
+.invalid {
+  color: rgb(189, 189, 189);
+}
+
+/* Responsive styles */
+
+@media (max-width: 1024px) {
+  .register-container {
+    flex-direction: column-reverse;
+  }
+  
+  .register-form {
+    max-width: 100%;
+    padding: 2rem;
+  }
+  
+  .register-illustration {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-form {
+    padding: 1.5rem;
+  }
+  
+  .register-logo {
+    height: 50px;
+    margin: 0 auto 1rem;
+    display: block;
+  }
+  
+  .close-btn {
+    top: 1rem;
+    right: 1.5rem;
+  }
+  
+  .register-form h1 {
+    font-size: 1.8rem;
+  }
+  
+  .register-illustration {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-form {
+    padding: 1rem;
+  }
+  
+  .register-form h1 {
+    font-size: 1.5rem;
+  }
+  
+  .register-logo {
+    height: 45px;
+  }
+  
+  .btn-main, .btn-google {
+    padding: 0.7rem;
+  }
+  
+  .register-illustration {
+    height: 200px;
+  }
+  
+  .password-rules {
+    font-size: 0.8rem;
+  }
+}
