@@ -70,7 +70,7 @@ const Register = ({setUser}) => {
   }
 
   try {
-    const res = await axios.post('http://localhost:5050/api/register', formData);
+    const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/register', formData);
 
     alert(res.data.message);
     console.log("Returned user from backend:", res.data.user); 

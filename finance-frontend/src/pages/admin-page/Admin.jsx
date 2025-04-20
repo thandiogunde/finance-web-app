@@ -39,7 +39,7 @@ useEffect(() => {
   const fetchBudget = async () => {
 
     try {
-      const res = await axios.get(`http://localhost:5050/api/budget/${user._id}`);
+      const res = await axios.get(`https://finance-web-app-production-59d5.up.railway.app/api/budget/${user._id}`);
       const latestBudget = res.data[res.data.length - 1]; // get most recent entry
       if (latestBudget) {
         setBudgetData(latestBudget.expenses);

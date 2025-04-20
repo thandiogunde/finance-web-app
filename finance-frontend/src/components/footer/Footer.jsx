@@ -35,14 +35,12 @@ const Footer = () => {
               </ul>
             </div>
             
-            {/* <div className="footer-links-section">
+            <div className="footer-links-section">
               <h4>Legal</h4>
               <ul>
                 <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link to="/cookies">Cookies</Link></li>
-                <li><Link to="/terms">Terms of Service</Link></li>
               </ul>
-            </div> */}
+            </div>
           </div>
         </div>
         

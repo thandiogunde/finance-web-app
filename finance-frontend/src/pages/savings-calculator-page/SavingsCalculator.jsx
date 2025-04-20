@@ -28,7 +28,7 @@ const SavingsCalculator = ({ user, onLogout }) => {
   
     try {
       const user = JSON.parse(localStorage.getItem('user'));
-      await axios.post('http://localhost:5050/api/savings/save', {
+      await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/savings/save', {
         userId: user._id,
         goalAmount,
         savedAmount,

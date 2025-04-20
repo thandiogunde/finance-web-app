@@ -27,7 +27,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true); // Start loader
     try {
-      const res = await axios.post('http://localhost:5050/api/contact', formData);
+      const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/contact', formData);
       console.log(res.data.message); // Optional: check success in console
     setShowSuccessPopup(true); 
       setFormData({ name: '', email: '', message: '' });
