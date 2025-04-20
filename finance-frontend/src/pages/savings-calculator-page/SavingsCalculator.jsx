@@ -50,9 +50,6 @@ const SavingsCalculator = ({ user, onLogout }) => {
 
   return (
     <div>
-      <HeaderBar isLoggedIn={true} onLogout={onLogout} />
-      <Navbar isAdmin={true} />
-
       <div className="breadcrumb">
         Home <span>&gt;</span> Manage Money <span>&gt;</span> <span className="active">Savings Calculator</span>
       </div>

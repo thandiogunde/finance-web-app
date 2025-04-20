@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom';
 const ManageMoney = ({ user, onLogout }) => {
   return (
     <div>
-      <HeaderBar isLoggedIn={true} onLogout={onLogout} />
-      <Navbar isAdmin={true} />
 
       <div className="breadcrumb">
         Home <span>&gt;</span> <span className="active">Manage Money</span>

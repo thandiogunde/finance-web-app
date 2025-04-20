@@ -44,8 +44,6 @@ const FAQs = ({ user, onLogout }) => {
 
   return (
     <>
-      <HeaderBar isLoggedIn={!!user} onLogout={onLogout} />
-      <Navbar isAdmin={!!user} />
       <div className="breadcrumb">Home <span>&gt;</span> <span className="active">FAQs</span></div>
 
       <section className="faq-banner">

@@ -26,8 +26,6 @@ const SearchResults = ({ user, onLogout }) => {
 
   return (
     <>
-      <HeaderBar isLoggedIn={!!user} onLogout={onLogout} />
-      <Navbar isAdmin={!!user} />
 
       <div className="breadcrumb">Home <span>&gt;</span> <span className="active">Search</span></div>
 

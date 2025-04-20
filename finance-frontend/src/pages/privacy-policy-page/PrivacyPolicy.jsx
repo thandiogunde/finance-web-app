@@ -7,8 +7,6 @@ import Footer from '../../components/footer/Footer';
 const PrivacyPolicy = ({ user, onLogout }) => {
   return (
     <>
-      <HeaderBar isLoggedIn={!!user} onLogout={onLogout} />
-      <Navbar isAdmin={!!user} />
       <div className="breadcrumb">Home <span>&gt;</span> <span className="active">Privacy Policy</span></div>
 
       <section className="privacy-banner">
