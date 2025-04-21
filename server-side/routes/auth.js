@@ -46,8 +46,6 @@ router.post('/register', async (req, res) => {
 });
 
 
-const bcrypt = require('bcryptjs');  // Make sure to import bcrypt
-
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
