@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ManageMoney.css';
-import HeaderBar from '../../components/header-bar/HeaderBar';
-import Navbar from '../../components/navbar/Navbar';
 import manageImage from '../../assets/manage-banner.png'; // import your image
 import { Link } from 'react-router-dom';
 
 const ManageMoney = ({ user, onLogout }) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/login'); // redirect if not logged in
+    }
+  }, [user, navigate]);
+
   return (
     <div>
 

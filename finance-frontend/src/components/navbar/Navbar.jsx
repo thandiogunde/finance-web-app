@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -118,6 +117,7 @@ const Navbar = ({ isAdmin, isLoggedIn, onLogout }) => {
               <li><NavLink to="/">Home</NavLink></li>
               <li><NavLink to="/learning">Learning</NavLink></li>
               <li><NavLink to="/daily-tips">Daily Tips</NavLink></li>
+              {isLoggedIn && <li><NavLink to="/manage-money">Manage Money</NavLink></li>}
               <li><NavLink to="/about">About Us</NavLink></li>
             </>
           )}
@@ -171,6 +171,7 @@ const Navbar = ({ isAdmin, isLoggedIn, onLogout }) => {
                   <li><NavLink to="/" onClick={closeMobileNav}>Home</NavLink></li>
                   <li><NavLink to="/learning" onClick={closeMobileNav}>Learning</NavLink></li>
                   <li><NavLink to="/daily-tips" onClick={closeMobileNav}>Daily Tips</NavLink></li>
+                  {isLoggedIn && <li><NavLink to="/manage-money" onClick={closeMobileNav}>Manage Money</NavLink></li>}
                   <li><NavLink to="/about" onClick={closeMobileNav}>About Us</NavLink></li>
                 </>
               )}
