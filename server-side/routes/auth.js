@@ -7,14 +7,11 @@ const User = require('../models/User');
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
 
-  // Basic validation
   if (!name || !email || !password) {
     return res.status(400).json({ message: 'Please fill in all fields' });
   }
 
-  // Password strength check
   const strongPasswordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-
   if (!strongPasswordPattern.test(password)) {
     return res.status(400).json({
       message: "Password must be at least 8 characters and include uppercase, lowercase, number, and special character."
@@ -22,13 +19,11 @@ router.post('/register', async (req, res) => {
   }
 
   try {
-    // Check if user exists
     const existing = await User.findOne({ email });
     if (existing) {
       return res.status(409).json({ message: 'User already exists' });
     }
 
-    // Save new user
     const newUser = new User({ name, email, password });
     await newUser.save();
 
@@ -40,7 +35,7 @@ router.post('/register', async (req, res) => {
     console.error("Registration error details:", error.message, error.stack);
     res.status(500).json({ 
       message: "Server error", 
-      details: error.message  // Include error details in response
+      details: error.message
     });
   }
 });
