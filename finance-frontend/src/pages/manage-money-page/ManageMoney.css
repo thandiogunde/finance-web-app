@@ -1,111 +1,183 @@
+/* Breadcrumb */
 .breadcrumb {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-  
-  .breadcrumb span {
-    margin: 0 0.3rem;
-  }
-  
-  .breadcrumb .active {
-    font-weight: bold;
-    text-decoration: underline;
-  }
-  
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.breadcrumb span {
+  margin: 0 0.3rem;
+}
+
+.breadcrumb .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Manage Hero Section */
+.manage-hero {
+  background-color: #a4d2dc;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: #073c4b 0px 0px 15px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.manage-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #073c4b;
+}
+
+.manage-hero p {
+  max-width: 400px;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #073c4b;
+}
+
+.manage-hero img {
+  width: 100%; /* Make image responsive */
+  max-width: 300px; /* Set a max-width to avoid oversized images */
+  margin-top: 2rem;
+}
+
+/* Calculators Section */
+.calculators {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem auto;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+
+.calculator-card {
+  background-color: #c0e7f1;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: #073c4b 0px 0px 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #073c4b;
+}
+
+.calculator-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #073c4b;
+}
+
+.start-btn {
+  background: none;
+  border: none;
+  font-weight: bold;
+  color: #e0b533;
+  font-size: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.calculators p {
+  font-size: 0.9rem;
+  margin-top: 0rem;
+  color: #073c4b;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.calculators a {
+  text-decoration: none;
+  color: goldenrod;
+  font-weight: bold;
+}
+
+.calculators a:hover {
+  text-decoration: underline;
+}
+
+.calculator-card:hover {
+  transform: translateY(-10px);
+  box-shadow: #073c4b 0px 0px 25px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
   .manage-hero {
-    background-color: #a4d2dc;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: #073c4b 0px 0px 15px;
+      flex-direction: column; /* Stack the content vertically on mobile */
+      text-align: center; /* Center align text for better readability */
   }
-  
+
   .manage-hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #073c4b;
+      font-size: 2rem;
   }
-  
+
   .manage-hero p {
-    max-width: 400px;
-    font-size: 1rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #073c4b;
+      font-size: 1rem;
+      max-width: 100%;
+      margin-bottom: 1rem;
   }
-  
+
   .manage-hero img {
-    width: 300px;
-    max-width: 45%;
+      width: 80%; /* Adjust image size on mobile */
+      max-width: 250px;
+      margin: 1rem 0;
   }
-  
+
   .calculators {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 3rem auto;
-    padding: 0 2rem;
-    flex-wrap: wrap;
+      flex-direction: column; /* Stack calculators vertically on mobile */
+      gap: 1rem; /* Reduce the gap between calculator cards */
+      padding: 0 1rem;
   }
-  
+
   .calculator-card {
-    background-color: #c0e7f1;
-    border-radius: 20px;
-    padding: 2rem;
-    width: 300px;
-    text-align: center;
-    box-shadow: #073c4b 0px 0px 15px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      width: 100%; /* Make calculator cards take full width on smaller screens */
+      padding: 1.5rem;
   }
-  
-  .calculator-card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #073c4b;
-  }
-  
-  .calculator-card p {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #073c4b;
-  }
-  
+
   .start-btn {
-    background: none;
-    border: none;
-    font-weight: bold;
-    color: #e0b533;
-    font-size: 1rem;
-    text-decoration: underline;
-    cursor: pointer;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+      font-size: 0.9rem;
   }
 
-  .calculators p{
-    font-size: 0.9rem;
-    margin-top: 0rem;
-    color: #073c4b;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  .calculator-card h2 {
+      font-size: 1.3rem;
+  }
+}
+
+/* Tablet Responsiveness (Between 768px and 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .manage-hero {
+      flex-direction: column; /* Stack content vertically for tablets */
+      text-align: center;
   }
 
-  .calculators a {
-    text-decoration: none;
-    color: goldenrod;
-    font-weight: bold;
-  }
-  .calculators a:hover {
-    text-decoration: underline;
-  }
-  
-  .calculator-card:hover {
-    transform: translateY(-10px);
-    box-shadow: #073c4b 0px 0px 25px;
+  .manage-hero img {
+      width: 70%; /* Adjust image size for tablets */
+      max-width: 300px;
+      margin: 1rem 0;
   }
 
+  .calculators {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
 
+  .calculator-card {
+      width: 80%; /* Make the calculator cards a bit wider on tablets */
+      padding: 2rem;
+  }
 
-
-  
+  .start-btn {
+      font-size: 0.95rem;
+  }
+}
