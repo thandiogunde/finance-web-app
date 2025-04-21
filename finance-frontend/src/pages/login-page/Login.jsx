@@ -17,25 +17,23 @@ const Login = ({ setUser }) => {
     setLoginData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/login', loginData);
-      console.log("Login response:", res.data);
-      alert(res.data.message || "Logged in!");
-      
-      localStorage.setItem('user', JSON.stringify(res.data.user)); // Save user in local storage
-      setUser(res.data.user); // Save user in App.js
-      navigate('/admin');     // Redirect to dashboard
-      
-    } catch (error) {
-      if (error.response && error.response.data && error.response.data.message) {
-        alert(error.response.data.message);
-      } else {
-        alert("Something went wrong. Try again.");
-      }
-    }
-  };  
+  // In Login component
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/login', {
+      email: formData.email,
+      password: formData.password
+    });
+    
+    localStorage.setItem('user', JSON.stringify(res.data.user));
+    setUser(res.data.user);
+    navigate('/admin');
+    
+  } catch (error) {
+    // Error handling
+  }
+};
 
   return (
     <div className="login-container">

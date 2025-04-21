@@ -60,23 +60,27 @@ const Register = ({setUser}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/login', loginData);
-      console.log("Login response:", res.data);
-      alert(res.data.message || "Logged in!");
+      const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/register', formData);
+      console.log("Registration response:", res.data);
+      alert(res.data.message || "Registered successfully!");
       
-      localStorage.setItem('user', JSON.stringify(res.data.user)); // Save user in local storage
-      setUser(res.data.user); // Save user in App.js
-      navigate('/admin');     // Redirect to dashboard
+      // After successful registration, you can either:
+      // Option 1: Automatically log them in
+      localStorage.setItem('user', JSON.stringify(res.data.user));
+      setUser(res.data.user);
+      navigate('/admin');
+      
+      // Option 2: Or redirect to login page
+      // navigate('/login');
       
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
         alert(error.response.data.message);
       } else {
-        alert("Something went wrong. Try again.");
+        alert("Registration failed. Please try again.");
       }
     }
   };
-  
 
   return (
     <div className="register-container">
