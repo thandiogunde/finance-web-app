@@ -11,29 +11,30 @@ const Login = ({ setUser }) => {
     email: '',
     password: ''
   });
+  
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLoginData(prev => ({ ...prev, [name]: value }));
   };
 
-  // In Login component
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/login', {
-      email: formData.email,
-      password: formData.password
-    });
-    
-    localStorage.setItem('user', JSON.stringify(res.data.user));
-    setUser(res.data.user);
-    navigate('/admin');
-    
-  } catch (error) {
-    // Error handling
-  }
-};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage('');
+    try {
+      console.log("Attempting login with:", loginData);
+      const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/login', loginData);
+      console.log("Login response:", res.data);
+      
+      localStorage.setItem('user', JSON.stringify(res.data.user));
+      setUser(res.data.user);
+      navigate('/admin');
+    } catch (error) {
+      console.error("Login error:", error.response ? error.response.data : error);
+      setErrorMessage(error.response?.data?.message || "Login failed. Please try again.");
+    }
+  };
 
   return (
     <div className="login-container">
@@ -45,6 +46,8 @@ const handleSubmit = async (e) => {
         </Link>
 
         <h1>Welcome back!</h1>
+
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
 
         <form onSubmit={handleSubmit}>
           <label>Email *</label>
@@ -75,7 +78,7 @@ const handleSubmit = async (e) => {
         <button className="btn-google">Sign in with Google</button>
 
         <p className="switch-form">
-          Don’t have an account? <Link to="/register">Sign up</Link>
+          Don't have an account? <Link to="/register">Sign up</Link>
         </p>
       </div>
 
