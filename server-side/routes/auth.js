@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 
+const bcrypt = require('bcryptjs');
+
 // @route   POST /api/register
 // @desc    Register a new user
 router.post('/register', async (req, res) => {
@@ -24,7 +26,10 @@ router.post('/register', async (req, res) => {
       return res.status(409).json({ message: 'User already exists' });
     }
 
-    const newUser = new User({ name, email, password });
+    // Hash the password before saving
+    const hashedPassword = await bcrypt.hash(password, 10); // Salt rounds = 10 (you can adjust this)
+
+    const newUser = new User({ name, email, password: hashedPassword });
     await newUser.save();
 
     res.status(201).json({
@@ -41,6 +46,8 @@ router.post('/register', async (req, res) => {
 });
 
 
+const bcrypt = require('bcryptjs');  // Make sure to import bcrypt
+
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -52,8 +59,10 @@ router.post('/login', async (req, res) => {
       return res.status(404).json({ message: "No account found. Please create an account." });
     }
 
-    // 2. Check password (in real apps, hash + compare — we'll do plain for now)
-    if (existingUser.password !== password) {
+    // 2. Compare password (hash + compare)
+    const isMatch = await bcrypt.compare(password, existingUser.password);
+
+    if (!isMatch) {
       return res.status(401).json({ message: "Incorrect password." });
     }
 
@@ -67,6 +76,7 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
 
 
 module.exports = router;
