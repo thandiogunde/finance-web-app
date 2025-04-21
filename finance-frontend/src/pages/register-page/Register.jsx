@@ -5,8 +5,6 @@ import logo from '../../assets/logo.png';
 import registerImage from '../../assets/register-banner.png';
 import axios from 'axios';
 
-
-
 const Register = ({setUser}) => {
   const navigate = useNavigate();
   // Step 1: Form state
@@ -48,47 +46,58 @@ const Register = ({setUser}) => {
     special: /[^A-Za-z0-9]/.test(password)
   };
   
-
   // Step 2: Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
 
     if (name === 'password') {
+      setPassword(value); // Update the password state
       setPasswordStrength(evaluateStrength(value));
     }
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  const strongPasswordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-
-  if (!strongPasswordPattern.test(formData.password)) {
-    alert("Password must be at least 8 characters and include uppercase, lowercase, number, and special character.");
-    return;
-  }
-
-  try {
-    const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/register', formData);
-
-    alert(res.data.message);
-    console.log("Returned user from backend:", res.data.user); 
-    // Store user info (if returned from backend)
-    setUser(res.data.user);
-    //  Redirect to admin page
-    navigate('/admin');
-    //Reset form
-    setFormData({ name: '', email: '', password: '' });
-
-  } catch (error) {
-    if (error.response) {
-      alert(error.response.data.message);
-    } else {
-      alert("Something went wrong. Please try again.");
+    e.preventDefault();
+  
+    const strongPasswordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+  
+    if (!strongPasswordPattern.test(formData.password)) {
+      alert("Password must be at least 8 characters and include uppercase, lowercase, number, and special character.");
+      return;
     }
-  }
-};
+  
+    // Use a CORS proxy only in development
+    const baseUrl = 'https://finance-web-app-production-59d5.up.railway.app';
+    const apiUrl = `${baseUrl}/api/register`;
+    
+  
+    try {
+      console.log("Sending registration data:", formData);
+      const res = await axios.post(apiUrl, formData, {
+        withCredentials: true
+      });
+      
+  
+      alert(res.data.message);
+      console.log("Returned user from backend:", res.data.user); 
+      // Store user info (if returned from backend)
+      setUser(res.data.user);
+      //  Redirect to admin page
+      navigate('/admin');
+      //Reset form
+      setFormData({ name: '', email: '', password: '' });
+      setPassword('');
+  
+    } catch (error) {
+      console.error("Registration error:", error);
+      if (error.response) {
+        alert(error.response.data.message + (error.response.data.details ? `: ${error.response.data.details}` : ''));
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    }
+  };
 
   return (
     <div className="register-container">
@@ -132,28 +141,27 @@ const Register = ({setUser}) => {
             required
           />
 
-       <div className={`strength-bar ${passwordStrength}`}></div>
+          <div className={`strength-bar ${passwordStrength}`}></div>
        
-       <ul className="password-rules">
-  <li className={formData.password.length >= 8 ? 'valid' : 'invalid'}>
-    {formData.password.length >= 8 ? '✔' : '✖'} At least 8 characters
-  </li>
-  <li className={/\d/.test(formData.password) ? 'valid' : 'invalid'}>
-    {/\d/.test(formData.password) ? '✔' : '✖'} At least 1 number
-  </li>
-  <li className={/[a-z]/.test(formData.password) ? 'valid' : 'invalid'}>
-    {/[a-z]/.test(formData.password) ? '✔' : '✖'} At least 1 lowercase letter
-  </li>
-  <li className={/[A-Z]/.test(formData.password) ? 'valid' : 'invalid'}>
-    {/[A-Z]/.test(formData.password) ? '✔' : '✖'} At least 1 uppercase letter
-  </li>
-  <li className={/[^A-Za-z0-9]/.test(formData.password) ? 'valid' : 'invalid'}>
-    {/[^A-Za-z0-9]/.test(formData.password) ? '✔' : '✖'} At least 1 special character
-  </li>
-</ul>
+          <ul className="password-rules">
+            <li className={password.length >= 8 ? 'valid' : 'invalid'}>
+              {password.length >= 8 ? '✔' : '✖'} At least 8 characters
+            </li>
+            <li className={/\d/.test(password) ? 'valid' : 'invalid'}>
+              {/\d/.test(password) ? '✔' : '✖'} At least 1 number
+            </li>
+            <li className={/[a-z]/.test(password) ? 'valid' : 'invalid'}>
+              {/[a-z]/.test(password) ? '✔' : '✖'} At least 1 lowercase letter
+            </li>
+            <li className={/[A-Z]/.test(password) ? 'valid' : 'invalid'}>
+              {/[A-Z]/.test(password) ? '✔' : '✖'} At least 1 uppercase letter
+            </li>
+            <li className={/[^A-Za-z0-9]/.test(password) ? 'valid' : 'invalid'}>
+              {/[^A-Za-z0-9]/.test(password) ? '✔' : '✖'} At least 1 special character
+            </li>
+          </ul>
 
-
-          <button type="submit" className="btn-main">Sign in</button>
+          <button type="submit" className="btn-main">Sign up</button>
         </form>
 
         <button className="btn-google">Sign in with Google</button>
@@ -171,4 +179,3 @@ const Register = ({setUser}) => {
 };
 
 export default Register;
-

@@ -8,12 +8,26 @@ require('dotenv').config(); // Load environment variables from .env
 const app = express();
 
 // CORS Configuration
+const allowedOrigins = [
+  'https://finance-web-app-xi.vercel.app',
+  'http://localhost:5173'
+];
+
 const corsOptions = {
-  origin: 'https://finance-web-app-xi.vercel.app', // Replace with your frontend origin
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS error: Origin ${origin} not allowed`));
+    }
+  },
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
+
+app.use(cors(corsOptions));
+
 
 // Middleware for CORS and preflight requests
 app.use(cors(corsOptions));
