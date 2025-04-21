@@ -5,8 +5,6 @@ import logo from '../../assets/logo.png';
 import loginImage from '../../assets/register-banner.png';
 import axios from 'axios';
 
-
-
 const Login = ({ setUser }) => {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
@@ -91,4 +89,3 @@ const Login = ({ setUser }) => {
 };
 
 export default Login;
-
