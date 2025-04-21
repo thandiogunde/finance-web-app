@@ -59,45 +59,24 @@ const Register = ({setUser}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    const strongPasswordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-  
-    if (!strongPasswordPattern.test(formData.password)) {
-      alert("Password must be at least 8 characters and include uppercase, lowercase, number, and special character.");
-      return;
-    }
-  
-    // Use a CORS proxy only in development
-    const baseUrl = 'https://finance-web-app-production-59d5.up.railway.app';
-    const apiUrl = `${baseUrl}/api/register`;
-    
-  
     try {
-      console.log("Sending registration data:", formData);
-      const res = await axios.post(apiUrl, formData, {
-        withCredentials: true
-      });
+      const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/login', loginData);
+      console.log("Login response:", res.data);
+      alert(res.data.message || "Logged in!");
       
-  
-      alert(res.data.message);
-      console.log("Returned user from backend:", res.data.user); 
-      // Store user info (if returned from backend)
-      setUser(res.data.user);
-      //  Redirect to admin page
-      navigate('/admin');
-      //Reset form
-      setFormData({ name: '', email: '', password: '' });
-      setPassword('');
-  
+      localStorage.setItem('user', JSON.stringify(res.data.user)); // Save user in local storage
+      setUser(res.data.user); // Save user in App.js
+      navigate('/admin');     // Redirect to dashboard
+      
     } catch (error) {
-      console.error("Registration error:", error);
-      if (error.response) {
-        alert(error.response.data.message + (error.response.data.details ? `: ${error.response.data.details}` : ''));
+      if (error.response && error.response.data && error.response.data.message) {
+        alert(error.response.data.message);
       } else {
-        alert("Something went wrong. Please try again.");
+        alert("Something went wrong. Try again.");
       }
     }
   };
+  
 
   return (
     <div className="register-container">

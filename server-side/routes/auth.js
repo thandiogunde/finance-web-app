@@ -4,8 +4,6 @@ const User = require('../models/User');
 
 const bcrypt = require('bcryptjs');
 
-// @route   POST /api/register
-// @desc    Register a new user
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -27,14 +25,14 @@ router.post('/register', async (req, res) => {
     }
 
     // Hash the password before saving
-    const hashedPassword = await bcrypt.hash(password, 10); // Salt rounds = 10 (you can adjust this)
+    const hashedPassword = await bcrypt.hash(password, 10); // Salt rounds = 10
 
     const newUser = new User({ name, email, password: hashedPassword });
     await newUser.save();
 
     res.status(201).json({
       message: "User registered successfully",
-      user: newUser 
+      user: newUser
     });
   } catch (error) {
     console.error("Registration error details:", error.message, error.stack);
