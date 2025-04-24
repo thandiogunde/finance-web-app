@@ -9,9 +9,10 @@ const app = express();
 
 // CORS Configuration
 const allowedOrigins = [
-  'https://finance-web-app-xi.vercel.app',
+  'https://finance-web-app-alpha-beige.vercel.app/',
   'http://localhost:5173'
 ];
+
 
 const corsOptions = {
   origin: function (origin, callback) {

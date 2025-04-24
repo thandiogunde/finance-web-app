@@ -60,7 +60,7 @@ const Register = ({setUser}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/register', formData);
+      const res = await axios.post('https://finance-web-app-production.up.railway.app/api/register', formData);
       console.log("Registration response:", res.data);
       alert(res.data.message || "Registered successfully!");
       

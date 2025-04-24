@@ -19,7 +19,7 @@ const Admin = ({ user, onLogout }) => {
   useEffect(() => {
     const fetchSavings = async () => {
       try {
-        const res = await axios.get(`http://localhost:5050/api/savings/${user._id}`);
+        const res = await axios.get(`https://finance-web-app-production.up.railway.app/api/savings/${user._id}`);
         const latest = res.data[res.data.length - 1];
         if (latest) {
           setSavingsData(latest);

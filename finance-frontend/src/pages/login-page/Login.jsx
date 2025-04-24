@@ -24,7 +24,7 @@ const Login = ({ setUser }) => {
     setErrorMessage('');
     try {
       console.log("Attempting login with:", loginData);
-      const res = await axios.post('https://finance-web-app-production-59d5.up.railway.app/api/login', loginData);
+      const res = await axios.post('https://finance-web-app-production.up.railway.app↗/api/login', loginData);
       console.log("Login response:", res.data);
       
       localStorage.setItem('user', JSON.stringify(res.data.user));
